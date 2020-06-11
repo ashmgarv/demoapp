@@ -6,7 +6,7 @@ import MainComponent from "./components/main";
 import axios from "axios";
 import _ from "lodash";
 import { Route, Switch, Redirect } from "react-router-dom";
-import NotFound from "./components/common/not-found";
+import NotFound from "./components/common/notFound";
 
 class App extends Component {
   render() {
