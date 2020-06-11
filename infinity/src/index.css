@@ -15,3 +15,14 @@ code {
 .bg-material {
   background-color: #6200ed;
 }
+
+.nb-hide {
+  display: none !important;
+}
+
+@media (min-width: 520px) {
+  .nb-hide {
+    margin-top: 5%;
+    display: flex !important;
+  }
+}
