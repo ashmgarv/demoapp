@@ -1,14 +1,14 @@
 import React from "react";
-import ImageCommentSet from "./imageCommentSet";
+import ResponsiveImageAndText from "./responsiveImageAndText";
 
-const ImageGrid = ({ imagesInfo, onComment }) => {
+const ImageGrid = ({ imagesInfo }) => {
   return (
-    <div className="row m-2">
+    <div className="row img-grid">
       {imagesInfo.map((item) => (
-        <ImageCommentSet
+        <ResponsiveImageAndText
           key={item.name}
-          imageInfo={item}
-          onComment={onComment}
+          imagePath={require(`../../art/${item.name}.jpeg`)}
+          imageText={item.display_text}
         />
       ))}
     </div>

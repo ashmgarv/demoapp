@@ -12,5 +12,4 @@ const NavBody = ({ linkData }) => {
     </div>
   );
 };
-
 export default NavBody;

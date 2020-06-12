@@ -3,7 +3,7 @@ import NavBody from "./navBody";
 
 const NavBarGeneric = ({ linkData }) => {
   return (
-    <nav className="navbar navbar-expand-md navbar-light nb-hide bg-light">
+    <nav className="navbar navbar-expand mb-5 fixed-top navbar-light nb-hide bg-white">
       <NavBody linkData={linkData} />
     </nav>
   );

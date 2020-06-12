@@ -13,7 +13,7 @@ code {
 }
 
 .bg-material {
-  background-color: #6200ed;
+  background-color: #6748cd;
 }
 
 .nb-hide {
@@ -39,9 +39,39 @@ code {
   border: 1px solid #6200ed;
 }
 
+.bg-light-gray {
+  background-color: #eeeef2;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.color-custom-white {
+  color: #ffffff;
+}
+
+.content-align-center {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 5%;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.img-grid {
+  margin-top: 20% !important;
+}
+
 @media (min-width: 520px) {
   .nb-hide {
     margin-top: 5%;
     display: flex !important;
+  }
+
+  .img-grid {
+    margin-top: 13% !important;
   }
 }

@@ -12,41 +12,59 @@ import NavBarGeneric from "./components/common/navBarGen";
 class App extends Component {
   state = {
     linkData: [
-      { path: "/", name: "Home" },
-      { path: "/", name: "Mall" },
-      { path: "/", name: "Office" },
-      { path: "/", name: "Place" },
+      { path: "/", name: "Trending" },
+      { path: "/", name: "For You" },
+      { path: "/", name: "Cooking" },
+      { path: "/", name: "Nature" },
+      { path: "/", name: "Science" },
+      { path: "/", name: "Travel" },
+      { path: "/", name: "Climate" },
+      { path: "/", name: "Music" },
+      { path: "/", name: "People" },
     ],
-    imagesInfo: [{ name: "image-1" }, { name: "image-2" }],
+    imagesInfo: [
+      {
+        name: "image-4",
+        display_text:
+          "Fresh wave of climate strikes takes place around the world",
+      },
+      {
+        name: "image-1",
+        display_text:
+          "Arctic sea ice extent hits record low for winter maximum",
+      },
+      {
+        name: "image-2",
+        display_text: "New battery for smartphone can now charge in a minute",
+      },
+      {
+        name: "image-3",
+        display_text: "The best tropical plants you can grow indoors",
+      },
+    ],
+    profileInfo: { name: "Lea Schneider" },
   };
 
-  handleComment = () => {
-    console.log("Your comment was shared");
-  };
   render() {
-    const { linkData, imagesInfo } = this.state;
+    const { linkData, imagesInfo, profileInfo } = this.state;
     return (
-      <div className="App">
-        <NavBar />
+      <main className="container">
+        <NavBar profileInfo={profileInfo} />
         <NavBarGeneric linkData={linkData} />
-        <div className="content">
+        <div className="mt-5">
           <Switch>
             <Route path="/not-found" component={NotFound}></Route>
             <Route
               path="/"
               exact
               render={(props) => (
-                <MainComponent
-                  imagesInfo={imagesInfo}
-                  onComment={this.handleComment}
-                  {...props}
-                />
+                <MainComponent imagesInfo={imagesInfo} {...props} />
               )}
             ></Route>
             <Redirect to="/not-found"></Redirect>
           </Switch>
         </div>
-      </div>
+      </main>
     );
   }
 }
