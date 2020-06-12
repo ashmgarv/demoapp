@@ -4,6 +4,9 @@
       "main_text": "Your Family Chemist",
       "main_info": "Now order medicines, cosmetics online with us",
       "not_found_text": "The Page your are looking for was not found"
+    },
+    "image_paths": {
+      "first": "../art/avatar-lg.png"
     }
   }
 ]

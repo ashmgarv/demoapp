@@ -17,9 +17,14 @@ class App extends Component {
       { path: "/", name: "Office" },
       { path: "/", name: "Place" },
     ],
+    imagesInfo: [{ name: "image-1" }, { name: "image-2" }],
+  };
+
+  handleComment = () => {
+    console.log("Your comment was shared");
   };
   render() {
-    const { linkData } = this.state;
+    const { linkData, imagesInfo } = this.state;
     return (
       <div className="App">
         <NavBar />
@@ -27,7 +32,17 @@ class App extends Component {
         <div className="content">
           <Switch>
             <Route path="/not-found" component={NotFound}></Route>
-            <Route path="/" exact component={MainComponent}></Route>
+            <Route
+              path="/"
+              exact
+              render={(props) => (
+                <MainComponent
+                  imagesInfo={imagesInfo}
+                  onComment={this.handleComment}
+                  {...props}
+                />
+              )}
+            ></Route>
             <Redirect to="/not-found"></Redirect>
           </Switch>
         </div>

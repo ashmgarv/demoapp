@@ -26,6 +26,19 @@ code {
   height: 50px;
 }
 
+.comment-container {
+  font-family: Lato;
+  margin-top: 100px;
+}
+
+.comment-textarea {
+  resize: none;
+  padding: 20px;
+  height: 130px;
+  width: 100%;
+  border: 1px solid #6200ed;
+}
+
 @media (min-width: 520px) {
   .nb-hide {
     margin-top: 5%;
