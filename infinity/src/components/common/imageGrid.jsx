@@ -9,6 +9,7 @@ const ImageGrid = ({ imagesInfo }) => {
           key={item.name}
           imagePath={require(`../../art/${item.name}.jpeg`)}
           imageText={item.display_text}
+          imageCategory={item.category}
         />
       ))}
     </div>

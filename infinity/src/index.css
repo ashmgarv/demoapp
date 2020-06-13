@@ -47,10 +47,6 @@ code {
   background-color: #ffffff;
 }
 
-.color-custom-white {
-  color: #ffffff;
-}
-
 .content-align-center {
   text-align: center;
   vertical-align: middle;
@@ -59,19 +55,60 @@ code {
 
 .navbar {
   margin-bottom: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .img-grid {
-  margin-top: 20% !important;
+  margin-top: 23% !important;
 }
 
-@media (min-width: 520px) {
+.footer {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear: both;
+  padding-top: 20px;
+}
+
+.color-primary {
+  color: #0275d8;
+}
+
+.border-category {
+  border-style: solid;
+  border-color: black;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 5px;
+  padding-top: 5px;
+}
+
+.card-text {
+  font-size: 0.5em !important;
+}
+
+@media (min-width: 768px) {
   .nb-hide {
-    margin-top: 5%;
+    margin-top: 4.5% !important;
     display: flex !important;
+    line-height: unset;
   }
 
   .img-grid {
-    margin-top: 13% !important;
+    margin-top: 20% !important;
+    margin-left: 8% !important;
+  }
+
+  .card-text {
+    font-size: 2em !important;
+    font-weight: bold;
+  }
+
+  .border-category {
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+    padding-top: 0px;
   }
 }
