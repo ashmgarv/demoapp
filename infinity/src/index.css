@@ -55,8 +55,7 @@ code {
 
 .navbar {
   margin-bottom: 0;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .img-grid {
@@ -88,7 +87,21 @@ code {
   font-size: 0.5em !important;
 }
 
-@media (min-width: 768px) {
+.nav-link:active {
+  border-bottom: solid !important;
+  color: #6200ed !important;
+  font-weight: bold !important;
+  border-bottom-color: #6200ed !important;
+}
+
+.nav-link-first {
+  border-bottom: solid !important;
+  color: #6200ed !important;
+  font-weight: bold !important;
+  border-bottom-color: #6200ed !important;
+}
+
+@media (min-width: 769px) {
   .nb-hide {
     margin-top: 4.5% !important;
     display: flex !important;

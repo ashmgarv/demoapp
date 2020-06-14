@@ -5,14 +5,19 @@ import NavBody from "./common/navBody";
 import avatar from "../art/avatar-sm.png";
 
 const NavBar = ({ profileInfo }) => {
+  const faData = [
+    { fa: "television", name: "CHANNELS" },
+    { fa: "bookmark", name: "BOOKMARKS" },
+    { fa: "pie-chart", name: "OVERVIEW" },
+    { fa: "cog", name: "WIDGETS" },
+  ];
   return (
-    // <header>
     <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-material">
       <Link className="navbar-brand" to="/">
         N
       </Link>
+      <NavBody faData={faData} />
       <NavbarToggler />
-      <NavBody linkData={[{ path: "/", name: "Home" }]} />
       <i
         className="fa fa-search fa-lg mr-2"
         style={{ color: "white" }}
@@ -26,7 +31,6 @@ const NavBar = ({ profileInfo }) => {
         {profileInfo.name}
       </p>
     </nav>
-    // </header>
   );
 };
 
