@@ -1,71 +1,73 @@
 import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/navbar";
-import data from "./config.json";
 import MainComponent from "./components/main";
-import axios from "axios";
-import _ from "lodash";
+import { login, register } from "./services/userService";
 import { Route, Switch, Redirect } from "react-router-dom";
 import NotFound from "./components/common/notFound";
 import NavBarGeneric from "./components/common/navBarGen";
 import Footer from "./components/common/footer";
+import LoginPage from "./components/common/login";
+import RegisterForm from "./components/common/register";
+import {
+  getLinkData,
+  getImagesInfo,
+  getFooterElements,
+} from "./services/dataService";
 
 class App extends Component {
   state = {
-    linkData: [
-      { path: "/", name: "Trending" },
-      { path: "/", name: "For You" },
-      { path: "/", name: "Cooking" },
-      { path: "/", name: "Nature" },
-      { path: "/", name: "Science" },
-      { path: "/", name: "Travel" },
-      { path: "/", name: "Climate" },
-      { path: "/", name: "Music" },
-      { path: "/", name: "People" },
-    ],
-    imagesInfo: [
-      {
-        name: "image-4",
-        display_text:
-          "Fresh wave of climate strikes takes place around the world",
-        category: "NATURE",
-      },
-      {
-        name: "image-1",
-        display_text:
-          "Arctic sea ice extent hits record low for winter maximum",
-        category: "NATURE",
-      },
-      {
-        name: "image-2",
-        display_text: "New battery for smartphone can now charge in a minute",
-        category: "TECHNOLOGY",
-      },
-      {
-        name: "image-3",
-        display_text: "The best tropical plants you can grow indoors",
-        category: "NATURE",
-      },
-    ],
+    linkData: getLinkData(),
+    imagesInfo: getImagesInfo(),
+    footerElements: getFooterElements(),
     profileInfo: { name: "Lea Schneider" },
-    footerElements: [
-      { name: "About Us" },
-      { name: "Terms And Conditions" },
-      { name: "Privacy Policy" },
-      { name: "Contact" },
-    ],
+    loggedIn: false,
+  };
+
+  handleLogin = async (username, password) => {
+    const promise = login(username, password);
+    const response = await promise;
+    const res_data = response.data;
+
+    const loggedIn = res_data["is_logged_in"];
+    const profileInfo = { ...this.state.profileInfo };
+
+    profileInfo.name = res_data["fullname"];
+    if (loggedIn) {
+      this.setState({ loggedIn, profileInfo });
+    }
+  };
+
+  handleRegister = async (username, password, fullname) => {
+    const promise = register(username, password, fullname);
+    const response = await promise;
+    const registered = response.data;
+    if (registered) {
+      alert("User Registered Successfully");
+    } else {
+      alert("There was a problem wih the registration, Please ry again later");
+    }
+  };
+
+  handleLogout = () => {
+    this.setState({ loggedIn: false });
   };
 
   render() {
-    const { linkData, imagesInfo, profileInfo, footerElements } = this.state;
-    return (
+    const {
+      linkData,
+      imagesInfo,
+      profileInfo,
+      footerElements,
+      loggedIn,
+    } = this.state;
+    return loggedIn ? (
       <React.Fragment>
         <main className="container-fluid">
-          <NavBar profileInfo={profileInfo} />
+          <NavBar profileInfo={profileInfo} onLogout={this.handleLogout} />
           <NavBarGeneric linkData={linkData} />
           <div className="container">
             <Switch>
-              <Route path="/not-found" component={NotFound}></Route>
               <Route
                 path="/"
                 exact
@@ -73,11 +75,33 @@ class App extends Component {
                   <MainComponent imagesInfo={imagesInfo} {...props} />
                 )}
               ></Route>
+              <Route path="/" exact component={App} />
+              <Route path="/not-found" component={NotFound}></Route>
               <Redirect to="/not-found"></Redirect>
             </Switch>
           </div>
         </main>
         <Footer footerElements={footerElements} />
+      </React.Fragment>
+    ) : (
+      <React.Fragment>
+        <Switch>
+          <Route
+            path="/register"
+            render={(props) => (
+              <RegisterForm onRegister={this.handleRegister} {...props} />
+            )}
+          ></Route>
+          <Route
+            path="/"
+            exact
+            render={(props) => (
+              <LoginPage onLogin={this.handleLogin} {...props} />
+            )}
+          ></Route>
+          <Route path="/not-found" component={NotFound}></Route>
+          <Redirect to="/not-found"></Redirect>
+        </Switch>
       </React.Fragment>
     );
   }

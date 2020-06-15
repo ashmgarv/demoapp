@@ -4,7 +4,7 @@ import NavbarToggler from "./common/navbarToggler";
 import NavBody from "./common/navBody";
 import avatar from "../art/avatar-sm.png";
 
-const NavBar = ({ profileInfo }) => {
+const NavBar = ({ profileInfo, onLogout }) => {
   const faData = [
     { fa: "television", name: "CHANNELS" },
     { fa: "bookmark", name: "BOOKMARKS" },
@@ -30,6 +30,12 @@ const NavBar = ({ profileInfo }) => {
       >
         {profileInfo.name}
       </p>
+      <button
+        className="btn bg-material ml-2 mb-2 text-white"
+        onClick={onLogout}
+      >
+        Logout
+      </button>
     </nav>
   );
 };

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "../custom_css/main.css";
 import ImageGrid from "./common/imageGrid.jsx";
 

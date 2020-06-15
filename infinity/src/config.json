@@ -1,5 +1,8 @@
 [
   {
-    "server_urls": {}
+    "server_urls": {
+      "login": "http://3.16.159.221:7000/login_api",
+      "register": "http://3.16.159.221:7000/user_api"
+    }
   }
 ]

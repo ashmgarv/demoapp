@@ -13,7 +13,12 @@ code {
 }
 
 .bg-material {
-  background-color: #6748cd;
+  background-color: #6748cd !important;
+}
+
+.bring-to-centre {
+  margin: 5% !important;
+  margin-left: 20% !important;
 }
 
 .nb-hide {
@@ -123,5 +128,10 @@ code {
     font-weight: bold;
     font-size: large;
     padding-top: 0px;
+  }
+
+  .bring-to-centre {
+    margin: 15% !important;
+    margin-left: 35% !important;
   }
 }

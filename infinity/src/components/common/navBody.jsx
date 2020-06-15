@@ -9,7 +9,7 @@ const NavBody = ({ linkData, faData }) => {
     <div className="collapse navbar-collapse" id="navbarCollapse">
       <div className="navbar-nav">
         {linkData.map((item) =>
-          item.name == "Trending" ? (
+          item.name === "Trending" ? (
             <NavLink
               key={item.name}
               className="nav-item nav-link nav-link-first"
@@ -28,7 +28,7 @@ const NavBody = ({ linkData, faData }) => {
           )
         )}
         {faData.map((item) => (
-          <a>
+          <a key={item.fa}>
             <i className={getClasses(item.fa)}>
               <span className="ml-2" style={{ fontSize: "small" }}>
                 {" "}
