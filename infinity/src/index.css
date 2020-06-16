@@ -83,9 +83,10 @@ code {
   border-style: solid;
   border-color: black;
   border-radius: 2px;
+  font-weight: bold;
   text-align: center;
-  font-size: 4px;
-  padding-top: 4px;
+  font-size: 5px;
+  padding-top: 6px;
 }
 
 .card-text {
@@ -133,7 +134,6 @@ code {
 
   .border-category {
     border-radius: 10px;
-    font-weight: bold;
     font-size: large;
     padding-top: 0px;
   }
