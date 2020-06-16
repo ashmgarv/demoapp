@@ -108,7 +108,7 @@ code {
 
 @media (min-width: 769px) {
   .nb-hide {
-    margin-top: 4.5% !important;
+    margin-top: 8% !important;
     display: flex !important;
     line-height: unset;
   }
@@ -133,5 +133,11 @@ code {
   .bring-to-centre {
     margin: 15% !important;
     margin-left: 35% !important;
+  }
+}
+
+@media (min-width: 1263px) {
+  .nb-hide {
+    margin-top: 4.5% !important;
   }
 }
