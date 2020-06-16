@@ -44,7 +44,6 @@ class App extends Component {
     const registered = response.data;
     if (registered) {
       alert("User Registered Successfully");
-      this.forceUpdate();
     } else {
       alert("There was a problem wih the registration, Please ry again later");
     }
