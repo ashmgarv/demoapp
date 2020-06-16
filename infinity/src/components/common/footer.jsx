@@ -4,15 +4,15 @@ import { getLighterClasses } from "../../utils/common";
 const Footer = ({ footerElements }) => {
   return (
     <footer className="container-fluid py-4 bg-white">
-      <div className="row">
+      <div className="row ml-5">
         {footerElements.map((item) => (
-          <div key={item.name} className="col-2">
+          <div key={item.name} className="col-footer">
             <a className={getLighterClasses()} href="#">
               {item.name}
             </a>
           </div>
         ))}
-        <div className="col-2">
+        <div className="col-footer">
           <a href="#">
             <i className="fa fa-facebook-official fa-lg" />
           </a>
@@ -23,7 +23,7 @@ const Footer = ({ footerElements }) => {
             <i className="fa fa-twitter-square fa-lg ml-2" />
           </a>
         </div>
-        <div className="col-2">
+        <div className="col-footer">
           <p className={getLighterClasses()}>© 2019 All rights reserved</p>
         </div>
       </div>
