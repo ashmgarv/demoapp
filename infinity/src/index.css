@@ -111,11 +111,19 @@ code {
   width: 100% !important;
 }
 
+.col-name {
+  width: 5% !important;
+}
+
 @media (min-width: 780px) {
   .nb-hide {
-    margin-top: 6.9% !important;
+    margin-top: 7.3% !important;
     display: flex !important;
     line-height: unset;
+  }
+
+  .col-name {
+    width: 8% !important;
   }
 
   .col-footer {
@@ -144,9 +152,19 @@ code {
   }
 }
 
+@media (min-width: 1100px) {
+  .col-name {
+    width: 20% !important;
+  }
+}
+
 @media (min-width: 1270px) {
   .nb-hide {
     margin-top: 4.5% !important;
+  }
+
+  .col-name {
+    width: 20% !important;
   }
 }
 

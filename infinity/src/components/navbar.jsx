@@ -24,12 +24,14 @@ const NavBar = ({ profileInfo, onLogout }) => {
         aria-hidden="true"
       ></i>
       <img src={avatar} alt="Avatar" className="avatar mr-2" />
-      <p
-        className="text-white content-align-center mt-2"
-        style={{ textAlign: "center", fontWeight: "bold" }}
-      >
-        {profileInfo.name}
-      </p>
+      <div className="col-1">
+        <p
+          className="text-white align-self-center mt-2"
+          style={{ textAlign: "center", fontWeight: "bold", width: "100%" }}
+        >
+          {profileInfo.name}
+        </p>
+      </div>
       <button
         className="btn bg-material ml-2 mb-2 text-white"
         onClick={onLogout}

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const getClasses = (fa) => {
-  return "fa fa-" + fa + " fa-lg mr-2 font-weight-bold text-white";
+  return "fa fa-" + fa + " fa-lg mr-2 font-weight-bold text-white col-3 col-md";
 };
 const NavBody = ({ linkData, faData }) => {
   return (
@@ -30,10 +30,7 @@ const NavBody = ({ linkData, faData }) => {
         {faData.map((item) => (
           <a key={item.fa}>
             <i className={getClasses(item.fa)}>
-              <span className="ml-2" style={{ fontSize: "small" }}>
-                {" "}
-                {item.name}
-              </span>
+              <span style={{ fontSize: "small" }}> {item.name}</span>
             </i>
           </a>
         ))}
