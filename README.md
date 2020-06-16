@@ -7,7 +7,6 @@ Steps to run without Dockerfile
 
 With Dockerfile
 
-- Change directory to infinity `cd infinity`
 - Build the docker image using command : `docker build -t {imageName} .`
 - Run `docker run -i -p 3000:3000 {imageName:version}`
 - Check out the application by navigating to `http://localhost:3000/`
