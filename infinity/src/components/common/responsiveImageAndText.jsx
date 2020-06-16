@@ -11,9 +11,7 @@ const ResponsiveImageAndText = ({ imagePath, imageText, imageCategory }) => {
             <div className="col-4 col-sm-4">
               <i className="fa fa-wifi fa-lg fa-rotate-90 color-primary" />
             </div>
-            <div className="footer-col border-category mt-1">
-              {imageCategory}
-            </div>
+            <div className="footer-col border-category">{imageCategory}</div>
           </div>
         </div>
       </div>
